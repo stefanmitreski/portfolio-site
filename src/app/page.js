@@ -7,6 +7,7 @@ import Contact from './components/Contact';
 import BackToTop from "./components/BackToTop";
 import './styles/globals.css';
 
+
 export default function Home() {
   return (
     <>

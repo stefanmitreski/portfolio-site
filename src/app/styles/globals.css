@@ -1,3 +1,6 @@
+/* Tailwind import */
+@import "tailwindcss";
+
 /* Tailwind CSS base setup */
 @tailwind base;
 @tailwind components;
@@ -7,3 +10,267 @@
 html {
   scroll-behavior: smooth;
 } 
+
+/* Root color variables */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+:root {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* Global background and font */
+html, body {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ef 100%);
+  background-attachment: fixed;
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  transition: background 0.3s;
+}
+
+@media (prefers-color-scheme: dark) {
+  html, body {
+    /* background: linear-gradient(135deg, #10131a 0%, #23283b 100%); */
+    background: linear-gradient(135deg, #707070 0%, #23283b 100%);
+    color: var(--foreground);
+  }
+}
+
+/* Navbar styles */
+.nav-item {
+  padding: 0 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Navbar hide/show animation */
+.navbar-visible {
+  transform: translateY(0) !important;
+  transition: transform 0.4s cubic-bezier(0.4,0,0.2,1) !important;
+}
+.navbar-hidden {
+  transform: translateY(-120%) !important;
+  transition: transform 0.4s cubic-bezier(0.4,0,0.2,1) !important;
+}
+
+/* Hero image shadow */
+.hero-img-shadow {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12), 0 1.5px 6px rgba(0,0,0,0.08) !important;
+}
+
+/* Section container utility */
+.section-container {
+  max-width: 1100px;
+  margin: 0 auto 48px auto;
+  padding: 64px 24px;
+  border-radius: 2rem;
+  background: rgba(255,255,255,0.75);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+  backdrop-filter: blur(2px);
+  transition: background 0.3s;
+}
+@media (prefers-color-scheme: dark) {
+  .section-container {
+    background: rgba(16,19,26,0.85);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  }
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Geist', 'Inter', 'Segoe UI', Arial, sans-serif;
+  letter-spacing: -0.02em;
+}
+.section-container h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 32px;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
+@media (prefers-color-scheme: dark) {
+  .section-container h2 {
+    color: #60a5fa;
+  }
+}
+
+/* Button focus style */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* Hero background utility (if used) */
+.hero-bg {
+  background-image: url('/images/my_picture.png');
+  background-size: 40% !important; 
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Skills section */
+/* #skills {
+  background-color: #f8f9fa;
+}
+@media (prefers-color-scheme: dark) {
+  #skills {
+    background-color: #181c20;
+  }
+} */
+.skill-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+.skill-card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+.skill-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+}
+.skill-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(-40px);}
+  to { opacity: 1; transform: translateX(0);}
+}
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(40px);}
+  to { opacity: 1; transform: translateX(0);}
+}
+@keyframes popIn {
+  0% { transform: scale(0.95); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+.animate-slideLeft {
+  animation: slideLeft 0.5s ease-out forwards;
+}
+.animate-slideRight {
+  animation: slideRight 0.5s ease-out forwards;
+}
+.animate-popIn {
+  animation: popIn 0.3s ease-out forwards;
+}
+
+/* Hero left column grid utility */
+.hero-left-grid {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  height: 100%;
+  min-height: 500px;
+}
+.hero-left-top {
+  display: flex;
+  align-items: flex-end;
+  /* Push content to bottom of top half */
+}
+.hero-left-bottom {
+  display: flex;
+  align-items: flex-start;
+  /* Push content to top of bottom half */
+}
+@media (max-width: 767px) {
+  .hero-left-grid {
+    grid-template-rows: auto auto;
+    height: auto;
+    min-height: unset;
+  }
+}
+
+.hero-left-offset {
+  padding-left: 4rem;
+}
+@media (min-width: 768px) {
+  .hero-left-offset {
+    padding-left: 8rem;
+  }
+}
+
+.hero-text-margin {
+  margin-left: 5vw !important;
+}
+@media (min-width: 768px) {
+  .hero-text-margin {
+    margin-left: 8vw !important;
+  }
+}
+
+.hero-cv-btn {
+  padding-left: 2.75rem !important;  /* ~px-11 */
+  padding-right: 2.75rem !important;
+  padding-top: 0.75rem !important;   /* ~py-3 */
+  padding-bottom: 0.75rem !important;
+  /* margin-top: 3rem !important; */
+}
+
+.hero-subtitle {
+  padding-bottom: 1.5rem;
+}
+
+.socials {
+  padding-right: 55%;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.socials a {
+  background-color: white;
+  border-radius:80%;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.socials-hero {
+  padding-right: 62%;
+}
+
+.socials-contact {
+  padding-top: 3rem;
+}
+
+.hello-align {
+  padding-left: 0.3rem;
+}
+
+/* @media (min-width: 640px) {
+  .sm\:hidden {
+    display: none !important;
+  }
+} */
