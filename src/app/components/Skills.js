@@ -1,0 +1,73 @@
+const skillData = [
+  { name: "Java", color: "bg-blue-100 text-blue-700", icon: "/images/java.svg" },
+  { name: "Selenium", color: "bg-green-100 text-green-700", icon: "/images/selenium.svg" },
+  { name: "Cypress", color: "bg-emerald-100 text-emerald-700", icon: "/images/cypress.svg" },
+  { name: "Jenkins", color: "bg-orange-100 text-orange-700", icon: "/images/jenkins.svg" },
+  { name: "Postman", color: "bg-yellow-100 text-yellow-700", icon: "/images/postman.svg" },
+  { name: "Git", color: "bg-red-100 text-red-700", icon: "/images/git.svg" },
+  { name: "SQL", color: "bg-purple-100 text-purple-700", icon: "/images/sql.svg" },
+  { name: "Agile", color: "bg-pink-100 text-pink-700", icon: "/images/agile.svg" },
+  { name: "Cucumber", color: "bg-lime-100 text-lime-700", icon: "/images/cucumber.svg" },
+  { name: "Zephyr", color: "bg-sky-100 text-sky-700", icon: "/images/zephyr.svg" },
+  { name: "Skill11", color: "bg-lime-100 text-lime-700", icon: "/images/cucumber.svg" },
+  { name: "Skill12", color: "bg-sky-100 text-sky-700", icon: "/images/zephyr.svg" },
+];
+
+const skillDescriptions = {
+  Java: "Strong knowledge in Java, focusing on writing automation scripts and backend testing.",
+  Selenium: "Proficient in using Selenium for frontend automation, ensuring high-quality user interfaces.",
+  Cypress: "Experienced with Cypress for modern frontend testing and end-to-end scenarios.",
+  Jenkins: "Expertise in continuous integration using Jenkins to streamline testing and deployments.",
+  Postman: "Proficient in API testing using Postman for functional and regression testing.",
+  Git: "Advanced version control skills with Git for managing source code and collaborating with teams.",
+  SQL: "Strong SQL skills for database testing, data validation, and troubleshooting backend issues.",
+  Agile: "Experienced in Agile methodologies, including sprint planning, retrospectives, and continuous improvement.",
+  Cucumber: "Experience with BDD and using Cucumber for writing automated tests in collaboration with development teams.",
+  Zephyr: "Skilled in using Zephyr for test management, tracking, and reporting in a Jira environment.",
+  Skill11: "Experience with BDD and using Cucumber for writing automated tests in collaboration with development teams.",
+  Skill12: "Skilled in using Zephyr for test management, tracking, and reporting in a Jira environment.",
+};
+
+const Skills = () => {
+  return (
+    <section
+      id="skills"
+      className="py-24 px-6 md:px-12 min-h-screen flex flex-col justify-center items-center"
+    >
+      <h2 className="text-4xl md:text-5xl font-extrabold text-blue-600 dark:text-blue-400 mb-10 text-center">
+        Skills
+      </h2>
+      <div className="skills-grid-spacing grid grid-cols-4 auto-rows-fr gap-16 max-w-4xl mx-auto justify-items-center">
+        {skillData.map((skill) => (
+          <div
+            key={skill.name}
+            className={`group flex flex-col items-center justify-center ${skill.color} rounded-full shadow-lg w-40 h-40 mx-auto transition-transform duration-300 hover:scale-110 hover:shadow-2xl relative cursor-pointer`}
+            tabIndex={0}
+          >
+            {skill.icon && (
+              <img
+                src={skill.icon}
+                alt={skill.name}
+                className="w-12 h-12 mb-2"
+                draggable={false}
+              />
+            )}
+            <span className="text-lg font-bold mb-1">{skill.name}</span>
+            {/* Tooltip on hover/focus */}
+            <div
+              className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 opacity-0 group-hover:opacity-100 group-focus:opacity-100 pointer-events-none transition-opacity duration-200 max-w-xs w-32 px-3 py-2 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 text-center text-sm font-semibold break-words overflow-hidden ${skill.color}`}
+              style={{ minWidth: '8rem' }}
+            >
+              {skillDescriptions[skill.name]}
+            </div>
+          </div>
+        ))}
+      </div>
+      <p className="mt-24 text-center text-gray-500 dark:text-gray-400 max-w-2xl">
+        <span className="font-semibold text-blue-600 dark:text-blue-400">Tip:</span> Hover or focus on a skill to see more details!
+      </p>
+    </section>
+  );
+};
+
+export default Skills;
