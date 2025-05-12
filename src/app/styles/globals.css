@@ -233,7 +233,6 @@ a:focus-visible, button:focus-visible {
   padding-right: 2.75rem !important;
   padding-top: 0.75rem !important;   /* ~py-3 */
   padding-bottom: 0.75rem !important;
-  /* margin-top: 3rem !important; */
 }
 
 .hero-subtitle {
@@ -241,7 +240,6 @@ a:focus-visible, button:focus-visible {
 }
 
 .socials {
-  padding-right: 55%;
   margin-bottom: 1.5rem;
   display: flex;
   flex-direction: row;
@@ -257,20 +255,21 @@ a:focus-visible, button:focus-visible {
   transition: color 0.3s ease;
 }
 
-.socials-hero {
-  padding-right: 62%;
-}
-
 .socials-contact {
   padding-top: 3rem;
 }
 
-.hello-align {
-  padding-left: 0.3rem;
+@media (max-width: 767px) {
+  .socials,
+  .socials-hero {
+    padding-right: 0 !important;
+    justify-content: center !important;
+  }
 }
 
-/* @media (min-width: 640px) {
-  .sm\:hidden {
-    display: none !important;
+@media (max-width: 767px) {
+  .hero-text-margin
+  {
+    margin-left: 0 !important;
   }
-} */
+}
