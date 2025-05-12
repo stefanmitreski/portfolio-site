@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const skillData = [
   { name: "Java", color: "bg-blue-100 text-blue-700", icon: "/images/java.svg" },
   { name: "Selenium", color: "bg-green-100 text-green-700", icon: "/images/selenium.svg" },
@@ -25,7 +27,7 @@ const skillDescriptions = {
   Cucumber: "Experience with BDD and using Cucumber for writing automated tests in collaboration with development teams.",
   Zephyr: "Skilled in using Zephyr for test management, tracking, and reporting in a Jira environment.",
   Skill11: "Experience with BDD and using Cucumber for writing automated tests in collaboration with development teams.",
-  Skill12: "Skilled in using Zephyr for test management, tracking, and reporting in a Jira environment.",
+  Zephyr2: "Skilled in using Zephyr for test management, tracking, and reporting in a Jira environment.",
 };
 
 const Skills = () => {
@@ -45,10 +47,12 @@ const Skills = () => {
             tabIndex={0}
           >
             {skill.icon && (
-              <img
+              <Image
                 src={skill.icon}
                 alt={skill.name}
                 className="w-12 h-12 mb-2"
+                width={48}
+                height={48}
                 draggable={false}
               />
             )}

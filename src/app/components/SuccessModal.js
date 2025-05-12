@@ -5,7 +5,7 @@ const SuccessModal = ({ onClose }) => {
       <div className="bg-white rounded-xl shadow-lg max-w-sm w-full p-6 text-center animate-popIn">
         <h3 className="text-2xl font-bold text-green-600 mb-4">Message Sent!</h3>
         <p className="text-gray-700 mb-6">
-          Thank you for reaching out. I'll get back to you as soon as possible.
+          Thank you for reaching out. I&apos;ll get back to you as soon as possible.
         </p>
         <button
           onClick={onClose}

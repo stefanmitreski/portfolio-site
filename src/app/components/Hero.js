@@ -16,20 +16,20 @@ export default function Hero() {
             QA Engineer &amp; Automation Tester
           </h2>
           <div className="socials socials-hero">
-            <a href="https://www.instagram.com/mitreski_stefan/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <img src="/images/instagram.png" alt="Instagram" className="w-8 h-8 hover:scale-110 transition" />
-            </a>
-            <a href="https://www.linkedin.com/in/stefan-mitrevski-566214238/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <img src="/images/linkedin-logo.png" alt="LinkedIn" className="w-8 h-8 hover:scale-110 transition" />
-            </a>
-            <a href="https://www.upwork.com/freelancers/~016ebe006d3a4e66b5" target="_blank" rel="noopener noreferrer" aria-label="Upwork">
-              <img src="/images/upwork.png" alt="Upwork" className="w-8 h-8 hover:scale-110 transition" />
-            </a>
-            <a href="https://github.com/stefanmitreski" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-              <img src="/images/github.png" alt="GitHub" className="w-8 h-8 hover:scale-110 transition" />
-            </a>
+              <a href="https://www.instagram.com/mitreski_stefan/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <Image src="/images/instagram.png" alt="Instagram" className="w-8 h-8 hover:scale-110 transition" width={32} height={32} />
+              </a>
+              <a href="https://www.linkedin.com/in/stefan-mitrevski-566214238/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <Image src="/images/linkedin-logo.png" alt="LinkedIn" className="w-8 h-8 hover:scale-110 transition" width={32} height={32} />
+              </a>
+              <a href="https://www.upwork.com/freelancers/~016ebe006d3a4e66b5" target="_blank" rel="noopener noreferrer" aria-label="Upwork">
+                <Image src="/images/upwork.png" alt="Upwork" className="w-8 h-8 hover:scale-110 transition" width={32} height={32} />
+              </a>
+              <a href="https://github.com/stefanmitreski" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <Image src="/images/github.png" alt="GitHub" className="w-8 h-8 hover:scale-110 transition" width={32} height={32} />
+              </a>
           </div>
-          <div className="flex flex-col gap-4 items-start">
+          <div className="flex flex-col gap-4 items-start mt-20">
             <a
               href="/files/CV_Stefan_Mitrevski.pdf"
               download

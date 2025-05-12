@@ -7,7 +7,7 @@
   --foreground: #171717;
 }
 
-@theme inline {
+:root {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -226,7 +226,7 @@ a:focus-visible, button:focus-visible {
   padding-right: 2.75rem !important;
   padding-top: 0.75rem !important;   /* ~py-3 */
   padding-bottom: 0.75rem !important;
-  margin-top: 3rem !important;
+  /* margin-top: 3rem !important; */
 }
 
 .hero-subtitle {

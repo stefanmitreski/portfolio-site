@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import SuccessModal from "./SuccessModal";
+import Image from "next/image";
 
 const Contact = () => {
   const [formData, setFormData] = useState({ email: "", message: "" });
@@ -31,21 +32,21 @@ const Contact = () => {
           {/* Left side: Contact Info */}
           <div className="flex flex-col justify-center">
             <h3 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100">Let&apos;s Connect</h3>
-            <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
+            <p className="text-lg text-gray-700 dark:text-gray-300 mb-2">
               Feel free to reach out for collaboration, freelance work, or just to say hi!
             </p>
             <div className="socials socials-contact">
               <a href="https://www.instagram.com/mitreski_stefan/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <img src="/images/instagram.png" alt="Instagram" className="w-8 h-8 hover:scale-110 transition" />
+                <Image src="/images/instagram.png" alt="Instagram" className="w-8 h-8 hover:scale-110 transition" width={32} height={32} />
               </a>
               <a href="https://www.linkedin.com/in/stefan-mitrevski-566214238/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <img src="/images/linkedin-logo.png" alt="LinkedIn" className="w-8 h-8 hover:scale-110 transition" />
+                <Image src="/images/linkedin-logo.png" alt="LinkedIn" className="w-8 h-8 hover:scale-110 transition" width={32} height={32} />
               </a>
               <a href="https://www.upwork.com/freelancers/~016ebe006d3a4e66b5" target="_blank" rel="noopener noreferrer" aria-label="Upwork">
-                <img src="/images/upwork.png" alt="Upwork" className="w-8 h-8 hover:scale-110 transition" />
+                <Image src="/images/upwork.png" alt="Upwork" className="w-8 h-8 hover:scale-110 transition" width={32} height={32} />
               </a>
               <a href="https://github.com/stefanmitreski" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                <img src="/images/github.png" alt="GitHub" className="w-8 h-8 hover:scale-110 transition" />
+                <Image src="/images/github.png" alt="GitHub" className="w-8 h-8 hover:scale-110 transition" width={32} height={32} />
               </a>
             </div>
           </div>
