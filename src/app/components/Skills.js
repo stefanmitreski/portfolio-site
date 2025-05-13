@@ -1,44 +1,47 @@
 import Image from "next/image";
 
 const skillData = [
-  { name: "Java", color: "bg-blue-100 text-blue-700", icon: "/images/java.svg" },
-  { name: "Selenium", color: "bg-green-100 text-green-700", icon: "/images/selenium.svg" },
+  { name: "Automation", color: "bg-lime-100 text-lime-700", icon: "/images/automation.png" },
+  { name: "Manual", color: "bg-sky-100 text-sky-700", icon: "/images/manual.png" },
+  { name: "Java", color: "bg-blue-100 text-blue-700", icon: "/images/java.png" },
+  { name: "Selenium", color: "bg-green-100 text-green-700", icon: "/images/se.png" },
+  { name: "SQL", color: "bg-purple-100 text-purple-700", icon: "/images/sql.png" },
+  { name: "Postman", color: "bg-yellow-100 text-yellow-700", icon: "/images/postman.png" },
+  { name: "AI", color: "bg-sky-100 text-sky-700", icon: "/images/ai.png" },
+  { name: "Cucumber", color: "bg-lime-100 text-lime-700", icon: "/images/cucumber.png" },
   { name: "Cypress", color: "bg-emerald-100 text-emerald-700", icon: "/images/cypress.svg" },
-  { name: "Jenkins", color: "bg-orange-100 text-orange-700", icon: "/images/jenkins.svg" },
-  { name: "Postman", color: "bg-yellow-100 text-yellow-700", icon: "/images/postman.svg" },
-  { name: "Git", color: "bg-red-100 text-red-700", icon: "/images/git.svg" },
-  { name: "SQL", color: "bg-purple-100 text-purple-700", icon: "/images/sql.svg" },
-  { name: "Agile", color: "bg-pink-100 text-pink-700", icon: "/images/agile.svg" },
-  { name: "Cucumber", color: "bg-lime-100 text-lime-700", icon: "/images/cucumber.svg" },
-  { name: "Zephyr", color: "bg-sky-100 text-sky-700", icon: "/images/zephyr.svg" },
-  { name: "Skill11", color: "bg-lime-100 text-lime-700", icon: "/images/cucumber.svg" },
-  { name: "Skill12", color: "bg-sky-100 text-sky-700", icon: "/images/zephyr.svg" },
+  { name: "Jenkins", color: "bg-orange-100 text-orange-700", icon: "/images/jenkins.png" },
+  { name: "Git", color: "bg-red-100 text-red-700", icon: "/images/git.png" },
+  { name: "Agile", color: "bg-pink-100 text-pink-700", icon: "/images/agile.png" },
 ];
 
 const skillDescriptions = {
+  Automation: "Skilled in designing and maintaining robust automated test suites to accelerate release cycles and improve software reliability.",
+  Manual: "Experienced in thorough manual testing, exploratory testing, and crafting detailed bug reports to ensure high-quality user experiences.",
+  AI: "Leveraging AI-powered tools and frameworks to enhance test coverage, analyze results, and drive smarter quality assurance strategies.",
   Java: "Strong knowledge in Java, focusing on writing automation scripts and backend testing.",
   Selenium: "Proficient in using Selenium for frontend automation, ensuring high-quality user interfaces.",
+  SQL: "Strong SQL skills for database testing, data validation, and troubleshooting backend issues.",
+  Postman: "Proficient in API testing using Postman for functional and regression testing.",
+  Cucumber: "Experience with BDD and using Cucumber for writing automated tests in collaboration with development teams.",
   Cypress: "Experienced with Cypress for modern frontend testing and end-to-end scenarios.",
   Jenkins: "Expertise in continuous integration using Jenkins to streamline testing and deployments.",
-  Postman: "Proficient in API testing using Postman for functional and regression testing.",
   Git: "Advanced version control skills with Git for managing source code and collaborating with teams.",
-  SQL: "Strong SQL skills for database testing, data validation, and troubleshooting backend issues.",
   Agile: "Experienced in Agile methodologies, including sprint planning, retrospectives, and continuous improvement.",
-  Cucumber: "Experience with BDD and using Cucumber for writing automated tests in collaboration with development teams.",
-  Zephyr: "Skilled in using Zephyr for test management, tracking, and reporting in a Jira environment.",
-  Skill11: "Experience with BDD and using Cucumber for writing automated tests in collaboration with development teams.",
-  Zephyr2: "Skilled in using Zephyr for test management, tracking, and reporting in a Jira environment.",
 };
 
 const Skills = () => {
   return (
     <section
       id="skills"
-      className="py-24 px-6 md:px-12 min-h-screen flex flex-col justify-center items-center"
+      className="py-10 px-6 md:px-12 min-h-screen flex flex-col justify-center items-center"
     >
-      <h2 className="text-4xl md:text-5xl font-extrabold text-blue-600 dark:text-blue-400 mb-10 text-center">
+      <h2 className="text-4xl md:text-5xl font-extrabold text-blue-600 dark:text-blue-400 text-center">
         Skills
       </h2>
+      <p className="my-7 text-center text-gray-500 dark:text-gray-400 max-w-2xl">
+        <span className="font-semibold text-blue-600 dark:text-blue-400">Tip:</span> Hover or focus on a skill to see more details!
+      </p>
       <div className="skills-grid-spacing grid grid-cols-4 auto-rows-fr gap-16 max-w-4xl mx-auto justify-items-center">
         {skillData.map((skill) => (
           <div
@@ -67,9 +70,6 @@ const Skills = () => {
           </div>
         ))}
       </div>
-      <p className="mt-24 text-center text-gray-500 dark:text-gray-400 max-w-2xl">
-        <span className="font-semibold text-blue-600 dark:text-blue-400">Tip:</span> Hover or focus on a skill to see more details!
-      </p>
     </section>
   );
 };

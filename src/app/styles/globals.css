@@ -124,15 +124,6 @@ a:focus-visible, button:focus-visible {
   background-repeat: no-repeat;
 }
 
-/* Skills section */
-/* #skills {
-  background-color: #f8f9fa;
-}
-@media (prefers-color-scheme: dark) {
-  #skills {
-    background-color: #181c20;
-  }
-} */
 .skill-card {
   background-color: #fff;
   padding: 20px;
