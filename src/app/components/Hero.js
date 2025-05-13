@@ -2,7 +2,9 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative flex flex-col lg:flex-row min-h-screen items-center justify-center px-4 md:px-24 bg-gradient-to-br from-[#f8fafc] to-[#e0e7ef] dark:from-[#10131a] dark:to-[#23283b] pt-[4.5rem] lg:pt-0">
+    <section className="relative flex flex-col lg:flex-row min-h-screen items-center justify-center px-4 md:px-24 bg-gradient-to-br from-blue-50 via-cyan-100 to-blue-200 dark:from-[#10131a] dark:via-[#23283b] dark:to-[#23283b] pt-[4.5rem] lg:pt-0 overflow-hidden">
+      {/* Decorative blurred shape */}
+      <div className="absolute -top-24 -left-24 w-96 h-96 bg-blue-300 dark:bg-blue-900 rounded-full blur-3xl opacity-30 -z-10"></div>
       {/* Left: Text and Buttons */}
       <div className="w-full lg:w-5/12 flex flex-col justify-center items-center lg:items-start lg:h-full lg:ml-0">
         <div className="max-w-xl space-y-6 mx-auto lg:mx-0 lg:pl-20">
@@ -10,17 +12,21 @@ export default function Hero() {
             <span className="text-base sm:text-lg md:text-xl text-gray-500 dark:text-gray-400 animate-fadeIn text-center lg:text-left pr-2 md:pl-1.5">
               Hello, I&apos;m
             </span>
-            <h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white animate-slideLeft text-center lg:text-left">
+            <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold bg-gradient-to-r from-blue-600 via-cyan-400 to-blue-400 bg-clip-text text-transparent drop-shadow-lg animate-slideLeft text-center lg:text-left mt-2">
               Stefan Mitrevski
             </h1>
-            <h2 className="hero-subtitle text-lg sm:text-2xl md:text-3xl font-medium text-blue-600 dark:text-blue-400 animate-slideLeft text-center lg:text-left">
+            <h2 className="text-lg sm:text-2xl md:text-3xl font-medium text-blue-600 dark:text-blue-400 animate-slideLeft text-center lg:text-left py-2 tracking-wide">
               QA Engineer &amp; Automation Tester
             </h2>
             <p className="mt-4 text-base sm:text-lg text-gray-600 dark:text-gray-300 animate-fadeIn text-center lg:text-left max-w-xl mx-auto lg:mx-0">
-              Welcome to my portfolio! Feel free to explore my projects, skills, and experience. Use the navigation above to browse different sections, and don&apos;t hesitate to reach out through the contact form if you&apos;d like to connect or collaborate.
+              Welcome to my portfolio! Feel free to explore my projects, skills,
+              and experience. Use the navigation above to browse different
+              sections, and don&apos;t hesitate to reach out through the contact
+              form if you&apos;d like to connect or collaborate.
             </p>
           </div>
-          <div className="flex gap-8 justify-center lg:justify-start mb-6 w-full">
+          {/* Social Icons */}
+          <div className="flex gap-6 justify-center lg:justify-start mb-6 w-full">
             <a
               href="https://www.instagram.com/mitreski_stefan/"
               target="_blank"
@@ -28,7 +34,13 @@ export default function Hero() {
               aria-label="Instagram"
               className="bg-white rounded-full"
             >
-              <Image src="/images/instagram.png" alt="Instagram" className="w-8 h-8 hover:scale-110 transition" width={32} height={32} />
+              <Image
+                src="/images/instagram.png"
+                alt="Instagram"
+                className="w-8 h-8"
+                width={32}
+                height={32}
+              />
             </a>
             <a
               href="https://www.linkedin.com/in/stefan-mitrevski-566214238/"
@@ -37,7 +49,13 @@ export default function Hero() {
               aria-label="LinkedIn"
               className="bg-white rounded-full"
             >
-              <Image src="/images/linkedin-logo.png" alt="LinkedIn" className="w-8 h-8 hover:scale-110 transition" width={32} height={32} />
+              <Image
+                src="/images/linkedin-logo.png"
+                alt="LinkedIn"
+                className="w-8 h-8"
+                width={32}
+                height={32}
+              />
             </a>
             <a
               href="https://www.upwork.com/freelancers/~016ebe006d3a4e66b5"
@@ -46,7 +64,13 @@ export default function Hero() {
               aria-label="Upwork"
               className="bg-white rounded-full"
             >
-              <Image src="/images/upwork.png" alt="Upwork" className="w-8 h-8 hover:scale-110 transition" width={32} height={32} />
+              <Image
+                src="/images/upwork.png"
+                alt="Upwork"
+                className="w-8 h-8"
+                width={32}
+                height={32}
+              />
             </a>
             <a
               href="https://github.com/stefanmitreski"
@@ -55,14 +79,21 @@ export default function Hero() {
               aria-label="GitHub"
               className="bg-white rounded-full"
             >
-              <Image src="/images/github.png" alt="GitHub" className="w-8 h-8 hover:scale-110 transition" width={32} height={32} />
+              <Image
+                src="/images/github.png"
+                alt="GitHub"
+                className="w-8 h-8"
+                width={32}
+                height={32}
+              />
             </a>
           </div>
+          {/* Download CV Button */}
           <div className="flex flex-col gap-4 items-center lg:items-start mt-8 lg:mt-20 w-full">
             <a
               href="/files/CV_Stefan_Mitrevski.pdf"
               download
-              className="hero-cv-btn bg-blue-600 text-white rounded-xl font-semibold shadow-lg hover:bg-blue-700 transition animate-popIn"
+              className="px-11 py-3 bg-gradient-to-r from-blue-600 via-cyan-400 to-blue-400 text-white rounded-xl font-semibold shadow-lg hover:scale-105 hover:shadow-xl hover:from-blue-700 transition animate-popIn"
             >
               Download CV
             </a>
@@ -71,7 +102,7 @@ export default function Hero() {
       </div>
       {/* Right: Image */}
       <div className="w-full lg:w-7/12 flex justify-center items-center mt-8 lg:mt-0 pr-0 lg:pr-20 animate-slideRight">
-        <div className="relative w-40 h-40 sm:w-64 sm:h-64 md:w-96 md:h-96 rounded-full overflow-hidden border-8 border-white dark:border-[#23283b] hero-img-shadow flex items-center justify-center mx-auto">
+        <div className="relative w-40 h-40 sm:w-64 sm:h-64 md:w-96 md:h-96 rounded-full overflow-hidden border-8 border-white dark:border-[#23283b] shadow-2xl flex items-center justify-center mx-auto">
           <Image
             src="/images/my_picture.png"
             alt="Stefan Mitrevski"
