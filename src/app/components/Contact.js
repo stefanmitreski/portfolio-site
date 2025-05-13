@@ -13,10 +13,20 @@ const Contact = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setShowModal(true);
-    setFormData({ email: "", message: "" });
+    // Send data to Formspree via AJAX
+    const res = await fetch("https://formspree.io/f/xovdpwgk", {
+      method: "POST",
+      headers: { Accept: "application/json" },
+      body: new FormData(e.target),
+    });
+    if (res.ok) {
+      setShowModal(true);
+      setFormData({ email: "", message: "" });
+    } else {
+      alert("There was an error sending your message. Please try again.");
+    }
   };
 
   return (
@@ -31,27 +41,76 @@ const Contact = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Left side: Contact Info */}
           <div className="flex flex-col justify-center items-center md:items-start text-center md:text-left">
-            <h3 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100">Let&apos;s Connect</h3>
+            <h3 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100">
+              Let&apos;s Connect
+            </h3>
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-2">
               Feel free to reach out for collaboration, freelance work, or just to say hi!
             </p>
-            <div className="socials socials-contact mb-6">
-              <a href="https://www.instagram.com/mitreski_stefan/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <Image src="/images/instagram.png" alt="Instagram" className="w-8 h-8 hover:scale-110 transition" width={32} height={32} />
+            <div className="socials socials-contact mb-6 flex gap-4">
+              <a
+                href="https://www.instagram.com/mitreski_stefan/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                <Image
+                  src="/images/instagram.png"
+                  alt="Instagram"
+                  className="w-8 h-8 hover:scale-110 transition"
+                  width={32}
+                  height={32}
+                />
               </a>
-              <a href="https://www.linkedin.com/in/stefan-mitrevski-566214238/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <Image src="/images/linkedin-logo.png" alt="LinkedIn" className="w-8 h-8 hover:scale-110 transition" width={32} height={32} />
+              <a
+                href="https://www.linkedin.com/in/stefan-mitrevski-566214238/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
+                <Image
+                  src="/images/linkedin-logo.png"
+                  alt="LinkedIn"
+                  className="w-8 h-8 hover:scale-110 transition"
+                  width={32}
+                  height={32}
+                />
               </a>
-              <a href="https://www.upwork.com/freelancers/~016ebe006d3a4e66b5" target="_blank" rel="noopener noreferrer" aria-label="Upwork">
-                <Image src="/images/upwork.png" alt="Upwork" className="w-8 h-8 hover:scale-110 transition" width={32} height={32} />
+              <a
+                href="https://www.upwork.com/freelancers/~016ebe006d3a4e66b5"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Upwork"
+              >
+                <Image
+                  src="/images/upwork.png"
+                  alt="Upwork"
+                  className="w-8 h-8 hover:scale-110 transition"
+                  width={32}
+                  height={32}
+                />
               </a>
-              <a href="https://github.com/stefanmitreski" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                <Image src="/images/github.png" alt="GitHub" className="w-8 h-8 hover:scale-110 transition" width={32} height={32} />
+              <a
+                href="https://github.com/stefanmitreski"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+              >
+                <Image
+                  src="/images/github.png"
+                  alt="GitHub"
+                  className="w-8 h-8 hover:scale-110 transition"
+                  width={32}
+                  height={32}
+                />
               </a>
             </div>
           </div>
           {/* Right side: Contact Form */}
-          <form className="rounded-xl p-4 sm:p-8 flex flex-col gap-6 w-full" onSubmit={handleSubmit}>
+          <form
+            onSubmit={handleSubmit}
+            className="rounded-xl p-4 sm:p-8 flex flex-col gap-6 w-full"
+          >
             <label className="text-lg font-medium text-gray-700 dark:text-gray-200 w-full">
               Email
               <input
