@@ -16,6 +16,9 @@ export default function Hero() {
             <h2 className="hero-subtitle text-lg sm:text-2xl md:text-3xl font-medium text-blue-600 dark:text-blue-400 animate-slideLeft text-center lg:text-left">
               QA Engineer &amp; Automation Tester
             </h2>
+            <p className="mt-4 text-base sm:text-lg text-gray-600 dark:text-gray-300 animate-fadeIn text-center lg:text-left max-w-xl mx-auto lg:mx-0">
+              Welcome to my portfolio! Feel free to explore my projects, skills, and experience. Use the navigation above to browse different sections, and don&apos;t hesitate to reach out through the contact form if you&apos;d like to connect or collaborate.
+            </p>
           </div>
           <div className="flex gap-8 justify-center lg:justify-start mb-6 w-full">
             <a

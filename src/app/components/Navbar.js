@@ -47,7 +47,7 @@ const Navbar = () => {
     >
 <div className="flex items-center justify-between h-full px-4 sm:px-8 max-w-5xl mx-auto">
         {/* Logo: only on mobile */}
-        <span className="block sm:hidden text-xl font-bold text-blue-600 dark:text-blue-400">Stefan</span>
+        <span className="block sm:hidden text-xl font-bold text-blue-600 dark:text-blue-400">Portfolio</span>
         {/* Hamburger */}
         <button
           className="flex sm:hidden flex-col justify-center items-center w-10 h-10 rounded focus:outline-none"
