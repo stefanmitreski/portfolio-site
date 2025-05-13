@@ -22,20 +22,20 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-24 px-6 md:px-12 flex items-center min-h-screen"
+      className="py-16 px-2 sm:py-24 sm:px-6 md:px-12 flex items-center min-h-screen"
     >
-      <div className="section-container max-w-4xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-blue-600 dark:text-blue-400 mb-10 text-center">
+      <div className="section-container max-w-4xl mx-auto w-full">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-blue-600 dark:text-blue-400 mb-10 text-center">
           Contact
         </h2>
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Left side: Contact Info */}
-          <div className="flex flex-col justify-center">
+          <div className="flex flex-col justify-center items-center md:items-start text-center md:text-left">
             <h3 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100">Let&apos;s Connect</h3>
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-2">
               Feel free to reach out for collaboration, freelance work, or just to say hi!
             </p>
-            <div className="socials socials-contact">
+            <div className="socials socials-contact mb-6">
               <a href="https://www.instagram.com/mitreski_stefan/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <Image src="/images/instagram.png" alt="Instagram" className="w-8 h-8 hover:scale-110 transition" width={32} height={32} />
               </a>
@@ -51,8 +51,8 @@ const Contact = () => {
             </div>
           </div>
           {/* Right side: Contact Form */}
-          <form className="rounded-xl p-8 flex flex-col gap-6" onSubmit={handleSubmit}>
-            <label className="text-lg font-medium text-gray-700 dark:text-gray-200">
+          <form className="rounded-xl p-4 sm:p-8 flex flex-col gap-6 w-full" onSubmit={handleSubmit}>
+            <label className="text-lg font-medium text-gray-700 dark:text-gray-200 w-full">
               Email
               <input
                 type="email"
@@ -64,7 +64,7 @@ const Contact = () => {
                 placeholder="you@example.com"
               />
             </label>
-            <label className="text-lg font-medium text-gray-700 dark:text-gray-200">
+            <label className="text-lg font-medium text-gray-700 dark:text-gray-200 w-full">
               Message
               <textarea
                 name="message"
@@ -78,7 +78,7 @@ const Contact = () => {
             </label>
             <button
               type="submit"
-              className="bg-blue-600 text-white rounded-lg py-3 px-8 font-semibold shadow-lg hover:bg-blue-700 transition"
+              className="bg-blue-600 text-white rounded-lg py-3 px-8 font-semibold shadow-lg hover:bg-blue-700 transition w-full sm:w-auto"
             >
               Send Message
             </button>
