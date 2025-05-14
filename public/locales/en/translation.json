@@ -1,0 +1,92 @@
+{
+  "nav": {
+    "logo": "Portfolio",
+    "about": "About",
+    "skills": "Skills",
+    "work": "Work",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "name": "Stefan Mitrevski",
+    "title": "QA Engineer & Automation Tester",
+    "description": "Welcome to my portfolio! Feel free to explore my projects, skills, and experience. Use the navigation above to browse different sections, and don't hesitate to reach out through the contact form if you'd like to connect or collaborate.",
+    "downloadCV": "Download CV"
+  },
+  "about": {
+    "heading": "About Me",
+    "intro1": "Hello! I'm ",
+    "name": "Stefan Mitrevski",
+    "intro2": ", a passionate and detail-oriented ",
+    "role": "QA Engineer",
+    "intro3": " with over two years of experience. I work at ",
+    "company": "Endava",
+    "intro4": ", where I have contributed to major projects.",
+    "specialize1": "I specialize in ",
+    "specializeTestPlanning": "Test Planning",
+    "specialize2": ", ",
+    "specializeManualAuto": "Manual & Automation Testing",
+    "specialize3": ", ",
+    "specializeReporting": "Reporting",
+    "specialize4": ", and ",
+    "specializeAgile": "Agile Methodologies",
+    "specialize5": ". My work involves collaborating with cross-functional teams and ensuring the highest quality in all software releases.",
+    "outro1": "Outside of work, I enjoy ",
+    "outroProblemSolving": "problem-solving",
+    "outro2": ", learning new technologies, and improving processes to enhance product quality.",
+    "contactMe": "Contact Me"
+  },
+  "skills": {
+    "heading": "Skills",
+    "tipLabel": "Tip:",
+    "tip": "Hover or focus on a skill to see more details!",
+    "AutomationDesc": "Skilled in designing and maintaining robust automated test suites to accelerate release cycles and improve software reliability.",
+    "ManualDesc": "Experienced in thorough manual testing, exploratory testing, and crafting detailed bug reports to ensure high-quality user experiences.",
+    "JavaDesc": "Strong knowledge in Java, focusing on writing automation scripts and backend testing.",
+    "SeleniumDesc": "Proficient in using Selenium for frontend automation, ensuring high-quality user interfaces.",
+    "SQLDesc": "Strong SQL skills for database testing, data validation, and troubleshooting backend issues.",
+    "PostmanDesc": "Proficient in API testing using Postman for functional and regression testing.",
+    "AIDesc": "Leveraging AI-powered tools and frameworks to enhance test coverage, analyze results, and drive smarter quality assurance strategies.",
+    "CucumberDesc": "Experience with BDD and using Cucumber for writing automated tests in collaboration with development teams.",
+    "CypressDesc": "Experienced with Cypress for modern frontend testing and end-to-end scenarios.",
+    "JenkinsDesc": "Expertise in continuous integration using Jenkins to streamline testing and deployments.",
+    "GitDesc": "Advanced version control skills with Git for managing source code and collaborating with teams.",
+    "AgileDesc": "Experienced in Agile methodologies, including sprint planning, retrospectives, and continuous improvement."
+  },
+  "work": {
+    "heading": "Work & Projects",
+    "experienceTitle": "Experience",
+    "experienceRole": "QA Engineer",
+    "experienceAt": "at a leading IT consultancy (2022 - Present)",
+    "experience1": "Developed and maintained automated test suites for web and backend systems",
+    "experience2": "Participated in agile ceremonies and sprint planning",
+    "experience3": "Maintained CI/CD pipelines and test reporting",
+    "experience4": "Collaborated with cross-functional teams to ensure high-quality releases",
+    "project1Title": "Media/Advertising Domain",
+    "project1Desc": "Worked on a large-scale media buying platform, focusing on backend and UI testing, building stable automation pipelines, and improving regression test reliability.",
+    "project1Item1": "Built and maintained E2E and API automation frameworks",
+    "project1Item2": "Enhanced test coverage and reduced manual effort",
+    "project1Item3": "Worked closely with developers and business analysts",
+    "project2Title": "Online Sports Betting Domain",
+    "project2Desc": "Contributed to a sports betting platform, responsible for test planning, automation, and collaborating with cross-functional teams to ensure high-quality releases.",
+    "project2Item1": "Designed and executed test plans for complex features",
+    "project2Item2": "Automated critical user journeys and backend flows",
+    "project2Item3": "Improved defect tracking and reporting processes"
+  },
+  "contact": {
+    "heading": "Contact",
+    "connect": "Let's Connect",
+    "invite": "Feel free to reach out for collaboration, freelance work, or just to say hi!",
+    "email": "Email",
+    "emailPlaceholder": "you@example.com",
+    "message": "Message",
+    "messagePlaceholder": "Type your message here...",
+    "send": "Send Message",
+    "error": "There was an error sending your message. Please try again."
+  },
+  "success": {
+    "title": "Message Sent!",
+    "message": "Thank you for reaching out. I'll get back to you as soon as possible.",
+    "close": "Close"
+  }
+}

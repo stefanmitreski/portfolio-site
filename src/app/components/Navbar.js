@@ -2,18 +2,14 @@
 
 import React, { useEffect, useState, useRef } from "react";
 import Link from "next/link";
-
-const NAV_LINKS = [
-  { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#work", label: "Work" },
-  { href: "#contact", label: "Contact" },
-];
+import LanguageToggle from "./LanguageToggle";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   const [hidden, setHidden] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const lastScrollY = useRef(0);
+  const { t } = useTranslation();
 
   // Hide navbar on scroll down
   useEffect(() => {
@@ -39,6 +35,13 @@ const Navbar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const NAV_LINKS = [
+    { href: "#about", label: t("nav.about") },
+    { href: "#skills", label: t("nav.skills") },
+    { href: "#work", label: t("nav.work") },
+    { href: "#contact", label: t("nav.contact") },
+  ];
+
   return (
     <nav
       aria-label="Main navigation"
@@ -51,8 +54,25 @@ const Navbar = () => {
       <div className="flex items-center justify-between h-full px-4 sm:px-8 max-w-5xl mx-auto">
         {/* Logo: only on mobile */}
         <span className="block sm:hidden text-xl font-bold text-blue-600 dark:text-blue-400">
-          Portfolio
+          {t("nav.logo")}
         </span>
+        {/* Desktop Nav */}
+        <ul className="hidden sm:flex flex-row justify-center items-center gap-4 sm:gap-10 md:gap-14 h-full w-full">
+          {NAV_LINKS.map((link) => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                className="px-4 text-base sm:text-lg md:text-2xl font-medium tracking-wide transition-colors duration-200 hover:text-blue-600 dark:hover:text-blue-400"
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        {/* Language Toggle */}
+        <div className="hidden sm:block ml-4">
+          <LanguageToggle />
+        </div>
         {/* Hamburger */}
         <button
           className="flex sm:hidden flex-col justify-center items-center w-10 h-10 rounded focus:outline-none"
@@ -75,19 +95,6 @@ const Navbar = () => {
             }`}
           ></span>
         </button>
-        {/* Desktop Nav */}
-        <ul className="hidden sm:flex flex-row justify-center items-center gap-4 sm:gap-10 md:gap-14 h-full w-full">
-          {NAV_LINKS.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className="px-4 text-base sm:text-lg md:text-2xl font-medium tracking-wide transition-colors duration-200 hover:text-blue-600 dark:hover:text-blue-400"
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
       </div>
       {/* Mobile Nav */}
       <ul
@@ -110,6 +117,10 @@ const Navbar = () => {
             </Link>
           </li>
         ))}
+        {/* Centered Language Toggle on mobile */}
+        <li className="w-full flex justify-center mt-2">
+          <LanguageToggle />
+        </li>
       </ul>
     </nav>
   );

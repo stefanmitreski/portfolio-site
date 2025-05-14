@@ -1,6 +1,11 @@
+"use client";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
+import "@/app/i18n";
 
 export default function Hero() {
+  const { t } = useTranslation();
+
   return (
     <section className="relative flex flex-col lg:flex-row min-h-screen items-center justify-center px-4 md:px-24 bg-gradient-to-br from-blue-50 via-cyan-100 to-blue-200 dark:from-[#10131a] dark:via-[#23283b] dark:to-[#23283b] pt-[4.5rem] lg:pt-0 overflow-hidden">
       {/* Decorative blurred shape */}
@@ -10,19 +15,16 @@ export default function Hero() {
         <div className="max-w-xl space-y-6 mx-auto lg:mx-0 lg:pl-20">
           <div className="text-center lg:text-left">
             <span className="text-base sm:text-lg md:text-xl text-gray-500 dark:text-gray-400 animate-fadeIn text-center lg:text-left pr-2 md:pl-1.5">
-              Hello, I&apos;m
+              {t("hero.greeting")}
             </span>
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold bg-gradient-to-r from-blue-600 via-cyan-400 to-blue-400 bg-clip-text text-transparent drop-shadow-lg animate-slideLeft text-center lg:text-left mt-2">
-              Stefan Mitrevski
+            <h1 className="text-4xl sm:text-6xl md:text-6xl font-extrabold bg-gradient-to-r from-blue-600 via-cyan-400 to-blue-400 bg-clip-text text-transparent drop-shadow-lg animate-slideLeft text-center lg:text-left mt-2">
+              {t("hero.name")}
             </h1>
             <h2 className="text-lg sm:text-2xl md:text-3xl font-medium text-blue-600 dark:text-blue-400 animate-slideLeft text-center lg:text-left py-2 tracking-wide">
-              QA Engineer &amp; Automation Tester
+              {t("hero.title")}
             </h2>
             <p className="mt-4 text-base sm:text-lg text-gray-600 dark:text-gray-300 animate-fadeIn text-center lg:text-left max-w-xl mx-auto lg:mx-0">
-              Welcome to my portfolio! Feel free to explore my projects, skills,
-              and experience. Use the navigation above to browse different
-              sections, and don&apos;t hesitate to reach out through the contact
-              form if you&apos;d like to connect or collaborate.
+              {t("hero.description")}
             </p>
           </div>
           {/* Social Icons */}
@@ -95,7 +97,7 @@ export default function Hero() {
               download
               className="px-11 py-3 bg-gradient-to-r from-blue-600 via-cyan-400 to-blue-400 text-white rounded-xl font-semibold shadow-lg hover:scale-105 hover:shadow-xl hover:from-blue-700 transition animate-popIn"
             >
-              Download CV
+              {t("hero.downloadCV")}
             </a>
           </div>
         </div>

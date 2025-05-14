@@ -1,12 +1,14 @@
 "use client";
-
 import { useState } from "react";
 import SuccessModal from "./SuccessModal";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
+import "@/app/i18n";
 
 const Contact = () => {
   const [formData, setFormData] = useState({ email: "", message: "" });
   const [showModal, setShowModal] = useState(false);
+  const { t } = useTranslation();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -15,7 +17,6 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Send data to Formspree via AJAX
     const res = await fetch("https://formspree.io/f/xovdpwgk", {
       method: "POST",
       headers: { Accept: "application/json" },
@@ -25,7 +26,7 @@ const Contact = () => {
       setShowModal(true);
       setFormData({ email: "", message: "" });
     } else {
-      alert("There was an error sending your message. Please try again.");
+      alert(t("contact.error"));
     }
   };
 
@@ -36,7 +37,7 @@ const Contact = () => {
     >
       <div className="section-container max-w-4xl mx-auto w-full">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-blue-600 dark:text-blue-400 mb-10 text-center">
-          Contact
+          {t("contact.heading")}
         </h2>
         {/* Decorative Divider */}
         <div className="w-16 h-1 bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-200 dark:from-blue-900 dark:via-blue-800 dark:to-cyan-900 rounded-full mb-8 mx-auto animate-popIn"></div>
@@ -44,11 +45,10 @@ const Contact = () => {
           {/* Socials and Info */}
           <div className="flex flex-col justify-center items-center md:items-start text-center md:text-left">
             <h3 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100">
-              Let&apos;s Connect
+              {t("contact.connect")}
             </h3>
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-2">
-              Feel free to reach out for collaboration, freelance work, or just
-              to say hi!
+              {t("contact.invite")}
             </p>
             <div className="flex gap-8 justify-center md:justify-start mb-6 mt-4 w-full">
               <a
@@ -119,7 +119,7 @@ const Contact = () => {
             className="rounded-xl p-4 sm:p-8 flex flex-col gap-6 w-full"
           >
             <label className="text-lg font-medium text-gray-700 dark:text-gray-200 w-full">
-              Email
+              {t("contact.email")}
               <input
                 type="email"
                 name="email"
@@ -127,11 +127,11 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 className="mt-2 w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-[#23283b] text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
-                placeholder="you@example.com"
+                placeholder={t("contact.emailPlaceholder")}
               />
             </label>
             <label className="text-lg font-medium text-gray-700 dark:text-gray-200 w-full">
-              Message
+              {t("contact.message")}
               <textarea
                 name="message"
                 required
@@ -139,14 +139,14 @@ const Contact = () => {
                 onChange={handleChange}
                 className="mt-2 w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-[#23283b] text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
                 rows={5}
-                placeholder="Type your message here..."
+                placeholder={t("contact.messagePlaceholder")}
               />
             </label>
             <button
               type="submit"
               className="bg-gradient-to-r from-blue-600 via-cyan-400 to-blue-400 text-white rounded-lg py-3 px-8 font-semibold shadow-lg hover:bg-blue-700 hover:scale-105 transition w-full sm:w-auto"
             >
-              Send Message
+              {t("contact.send")}
             </button>
           </form>
         </div>
