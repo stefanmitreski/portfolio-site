@@ -117,8 +117,7 @@ const Skills = () => {
             </span>
             {/* Tooltip on hover/focus */}
             <div
-              className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 opacity-0 group-hover:opacity-100 group-focus:opacity-100 pointer-events-none transition-opacity duration-200 max-w-xs w-32 px-3 py-2 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 text-center text-xs sm:text-sm font-semibold break-words overflow-hidden ${skill.color}`}
-              style={{ minWidth: "8rem" }}
+              className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 opacity-0 group-hover:opacity-100 group-focus:opacity-100 pointer-events-none transition-opacity duration-200  min-w-[9rem] max-w-xs w-32 px-3 py-2 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 text-center text-xs sm:text-sm font-semibold break-words overflow-hidden ${skill.color}`}
             >
               {skillDescriptions[skill.name]}
             </div>
