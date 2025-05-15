@@ -1,4 +1,5 @@
-import "@/app/i18n";
+import "@/app/i18n/i18nConfig";
+import { I18nProvider } from "@/app/i18n/i18nProvider";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./styles/globals.css";
 
@@ -28,7 +29,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-gradient-to-br from-[#f8fafc] to-[#e0e7ef] dark:from-[#10131a] dark:to-[#23283b] text-[#171717] dark:text-[#ededed] font-sans`}
       >
-        {children}
+        <I18nProvider>{children}</I18nProvider>
       </body>
     </html>
   );

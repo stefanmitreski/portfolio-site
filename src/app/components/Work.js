@@ -1,6 +1,6 @@
 "use client";
 import { useTranslation } from "react-i18next";
-import "@/app/i18n";
+import "@/app/i18n/i18nConfig";
 
 const Work = () => {
   const { t } = useTranslation();

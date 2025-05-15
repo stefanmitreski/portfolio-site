@@ -54,7 +54,7 @@ const Navbar = () => {
       <div className="flex items-center justify-between h-full px-4 sm:px-8 max-w-5xl mx-auto">
         {/* Logo: only on mobile */}
         <span className="block sm:hidden text-xl font-bold text-blue-600 dark:text-blue-400">
-          {t("nav.logo")}
+          Portfolio
         </span>
         {/* Desktop Nav */}
         <ul className="hidden sm:flex flex-row justify-center items-center gap-4 sm:gap-10 md:gap-14 h-full w-full">

@@ -3,7 +3,7 @@ import { useState } from "react";
 import SuccessModal from "./SuccessModal";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
-import "@/app/i18n";
+import "@/app/i18n/i18nConfig";
 
 const Contact = () => {
   const [formData, setFormData] = useState({ email: "", message: "" });

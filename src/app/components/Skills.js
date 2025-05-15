@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
-import "@/app/i18n";
+import "@/app/i18n/i18nConfig";
 
 const skillData = [
   {
